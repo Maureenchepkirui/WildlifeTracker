@@ -6,7 +6,7 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 import java.util.Objects;
-
+//EndangeredAnimal inherits the Animal class.....................................................................
 public class EndangeredAnimal extends Animal{
     private String health;
     private String age;
@@ -94,7 +94,7 @@ public class EndangeredAnimal extends Animal{
 
     public void update (String name, String health, String age){
         if(name == null || health == null || age == null){
-            throw new NullPointerException("name, health and age cannot be null or empty");
+            throw new NullPointerException("You need to fill in your details!!");
         }
         String sql = "UPDATE animals SET (name, health, age) = (:name, :health, :age) WHERE id = :id;";
         try(Connection con = DB.sql2o.open()){
