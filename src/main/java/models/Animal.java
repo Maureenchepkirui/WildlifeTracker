@@ -11,7 +11,7 @@ public class Animal {
     public String name;
     public String type;
 
-
+//<....................this is my constant................................................................................>
     private static final String  DATABASE_TYPE = "Animal";
 
     public Animal(String name) {
