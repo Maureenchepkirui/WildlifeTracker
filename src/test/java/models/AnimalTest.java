@@ -8,50 +8,50 @@ import static org.junit.Assert.*;
 
 public class AnimalTest {
     @Rule
-    public DatabaseRule database = new DatabaseRule();
-
+    public DatabaseRule database = new DatabaseRule();//database rule
+//<..............test for correct instantiation.............................
     @Test
-    public void newAnimal_instantiatesCorrectly() {
+    public void AnimalInstantiatesCorrectly_true() {
         Animal newAnimal = setNewAnimal();
         assertEquals(true, newAnimal instanceof Animal);
     }
-
+//<.............testing if getname method returns correct name........................
     @Test
-    public void getName_instantiatesCorrectlyWithId() {
+    public void getNameReturnsCorrectName_String() {
         Animal newAnimal = setNewAnimal();
-        assertEquals("Lion", newAnimal.getName());
+        assertEquals("Zebra", newAnimal.getName());
     }
-
+//<..................testing if getType method returns correct animal type............................................
     @Test
-    public void getType() {
+    public void getTypeReturnsCorrectAnimalType() {
         Animal newAnimal = setNewAnimal();
         assertEquals("Animal", newAnimal.getType());
     }
-
+//<............................overidding....................................
     @Test
-    public void equal_returnsTrueIfNamesAreEqual() {
+    public void equals_returnsTrueIfNamesAreEqual() {
         Animal newAnimal = setNewAnimal();
         Animal otherAnimal = new Animal("Lion");
         assertTrue(newAnimal.equals(otherAnimal));
     }
-
+//<.........................animalsAre saved to database...................................................................
     @Test
     public void save_animalsAreSavedCorrectlyInDatabase() {
         Animal newAnimal = new Animal("Lion");
         newAnimal.save();
         assertEquals(true, Animal.all().get(0).equals(newAnimal));
     }
-
+//<........................save() assigns Id............................................
     @Test
-    public void save_assignsIdToEndangeredAnimal() {
+    public void saveAssignsIdToAnimal() {
         Animal  firstAnimal = setNewAnimal();
         firstAnimal.save();
         Animal savedAnimal = Animal.all().get(0);
         assertEquals(savedAnimal.getId(), firstAnimal.getId());
     }
-
+//<.........................all animal instances are returned.............................................................................
     @Test
-    public void all_returnsAllInstancesOfAnimal() {
+    public void allReturnsAllInstancesOfAnimal_true() {
         Animal firstAnimal = setNewAnimal();
         firstAnimal.save();
         Animal secondAnimal = new Animal("Leopard");
@@ -59,9 +59,10 @@ public class AnimalTest {
         assertEquals(true, Animal.all().get(0).equals(firstAnimal));
         assertEquals(true, Animal.all().get(1).equals(secondAnimal));
     }
+//<...............................
 
     @Test
-    public void findById_correctInstanceOfAnimalIsReturnedById() {
+    public void findByIdReturnsCorrectInstanceOfAnimal_true() {
         Animal newAnimal = new Animal("Lion");
         newAnimal.save();
         Animal savedAnimal = Animal.findById(newAnimal.getId());
@@ -142,8 +143,8 @@ public class AnimalTest {
         assertTrue(firstAnimal.findSightings().contains(firstSighting));
         assertTrue(firstAnimal.findSightings().contains(secondSighting));
     }
-
+//<.............helper.....................................................
     private Animal setNewAnimal(){
-        return new Animal("Lion");
+        return new Animal("Zebra");
     }
 }
