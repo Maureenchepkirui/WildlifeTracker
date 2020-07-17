@@ -6,7 +6,6 @@ import org.sql2o.Sql2oException;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
-
 public class Sighting {
     private int id;
     private String location;
