@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
+
+ body{
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR181teRSVwLJEei9feaW_qIcFqcRLR5beD_g&usqp=CAU');
+background-repeat: no-repeat;
+height:100%;
+background-size: cover;
+background-position: center ;
+font-family: 'El Messiri', sans-serif;
+color: #D4AF37;
+
+}
