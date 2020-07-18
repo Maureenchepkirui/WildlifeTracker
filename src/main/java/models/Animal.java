@@ -12,11 +12,10 @@ public class Animal {
     public String type;
 
 //<....................this is my constant................................................................................>
-    private static final String  DATABASE_TYPE = "Animal";
-
+public static final String ANIMAL_TYPE = "Non-endangered";
     public Animal(String name) {
         this.name = name;
-        this.type = DATABASE_TYPE;
+        this.type = ANIMAL_TYPE;
     }
 
     public int getId() {
@@ -65,7 +64,7 @@ public class Animal {
         String sql = "SELECT * FROM animals WHERE type = :type;";
         try(Connection con = DB.sql2o.open()) {
            return con.createQuery(sql)
-                   .addParameter("type", DATABASE_TYPE)
+                   .addParameter("type",ANIMAL_TYPE)
                    .throwOnMappingFailure(false)
                   .executeAndFetch(Animal.class);
         }
@@ -76,7 +75,7 @@ public class Animal {
         try (Connection con = DB.sql2o.open()){
             return con.createQuery(sql)
                     .addParameter("id", id)
-                    .addParameter("type", DATABASE_TYPE)
+                    .addParameter("type", ANIMAL_TYPE)
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(Animal.class);
         }
@@ -101,7 +100,7 @@ public class Animal {
         String sql = "DELETE FROM animals WHERE type = :type;";
         try(Connection con = DB.sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("type", DATABASE_TYPE)
+                    .addParameter("type", ANIMAL_TYPE)
                     .executeUpdate();
         }catch (Sql2oException ex){
             System.out.println(ex);

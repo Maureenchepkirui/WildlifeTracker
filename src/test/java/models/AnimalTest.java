@@ -25,19 +25,19 @@ public class AnimalTest {
     @Test
     public void getTypeReturnsCorrectAnimalType() {
         Animal newAnimal = setNewAnimal();
-        assertEquals("Animal", newAnimal.getType());
+        assertEquals("Non-endangered", newAnimal.getType());
     }
 //<............................overidding....................................
     @Test
     public void equals_returnsTrueIfNamesAreEqual() {
         Animal newAnimal = setNewAnimal();
-        Animal otherAnimal = new Animal("Lion");
+        Animal otherAnimal = new Animal("Zebra");
         assertTrue(newAnimal.equals(otherAnimal));
     }
 //<.........................animalsAre saved to database...................................................................
     @Test
     public void save_animalsAreSavedCorrectlyInDatabase() {
-        Animal newAnimal = new Animal("Lion");
+        Animal newAnimal = new Animal("Zebra");
         newAnimal.save();
         assertEquals(true, Animal.all().get(0).equals(newAnimal));
     }
@@ -135,9 +135,9 @@ public class AnimalTest {
     public  void findSightings_sightingsRelatedToAnimalInstanceCanBeFound() {
         Animal firstAnimal = setNewAnimal();
         firstAnimal.save();
-        Sighting firstSighting = new Sighting("Zone A", "Kevin", firstAnimal.getId());
+        Sighting firstSighting = new Sighting("Zone A", "Peter", firstAnimal.getId());
         firstSighting.save();
-        Sighting secondSighting = new Sighting("Zone B", "Nane", firstAnimal.getId());
+        Sighting secondSighting = new Sighting("Zone B", "Maureen", firstAnimal.getId());
         secondSighting.save();
         assertEquals(2, firstAnimal.findSightings().size());
         assertTrue(firstAnimal.findSightings().contains(firstSighting));
