@@ -1,0 +1,17 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+    <h1>Add a Non-Endangered Animal</h1>
+
+    <p>Add animal here:</p>
+
+    <form action="/animals" method="post">
+        <div class="form-group md-form">
+            <label for="name">Animal Name</label>
+            <input id="name" name="name" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-dark-green">Add Animal</button>
+    </form>
+{{/partial}}
+{{> layout.hbs}}

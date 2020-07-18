@@ -41,7 +41,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "animal-form.hbs");
+            return new ModelAndView(model, "Animal-details.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to create new animal
@@ -54,7 +54,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException exception) {
-                return new ModelAndView(model, "endangered.hbs");
+                return new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine() );
 
@@ -65,7 +65,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "edit-endangered.hbs");
+            return new ModelAndView(model, "Endangered-details.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to create new endangered animal
@@ -80,7 +80,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException exception) {
-                return new ModelAndView(model, "endangered.hbs");
+                return new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine() );
 
@@ -143,7 +143,7 @@ public class App{
             model.put("sightings", allSightingsByAnimal);
             model.put("animals", Animal.all()); //refresh list of links for navbar
             model.put("endangeredAnimals", EndangeredAnimal.allEndangered());
-            return new ModelAndView(model, "edit-animal.hbs");
+            return new ModelAndView(model, "Animal-sighting-details.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //get: show a form to update animal
@@ -156,7 +156,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "animal-form.hbs");
+            return new ModelAndView(model, "Animal-details.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process form to update animal
@@ -170,7 +170,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return new ModelAndView(model, "endangered.hbs");
+                return new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine() );
 
@@ -184,7 +184,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "edit-endangered.hbs");
+            return new ModelAndView(model, "Endangered-details.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process form to update endangered animal
@@ -200,7 +200,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return new ModelAndView(model, "endangered.hbs");
+                return new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine() );
 
@@ -220,7 +220,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "animals.hbs");
+            return new ModelAndView(model, "Animal-form.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to record new animal sighting
@@ -237,7 +237,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return  new ModelAndView(model, "endangered.hbs");
+                return  new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine());
 
@@ -248,7 +248,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "endangered-form.hbs");
+            return new ModelAndView(model, "Endangered-form.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to record new endangered animal sighting
@@ -263,7 +263,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return  new ModelAndView(model, "endangered.hbs");
+                return  new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine() );
 
@@ -282,7 +282,7 @@ public class App{
             model.put("animals", Animal.all());
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "sighting-form.hbs");
+            return new ModelAndView(model, "sighting-details.hbs");
         }, new HandlebarsTemplateEngine());
 
         //get: show form to update a sighting
@@ -295,7 +295,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "animals.hbs");
+            return new ModelAndView(model, "Animal-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         //post: process form to update a sighting
@@ -315,7 +315,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return  new ModelAndView(model, "endangered.hbs");
+                return  new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine());
 
@@ -329,7 +329,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "endangered-form.hbs");
+            return new ModelAndView(model, "Endangered-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         //post: process form to update a sighting of endangered animal
@@ -349,7 +349,7 @@ public class App{
                 res.redirect("/");
                 return null;
             } catch (NullPointerException ex) {
-                return  new ModelAndView(model, "endangered.hbs");
+                return  new ModelAndView(model, "Endangered-sighting-details.hbs");
             }
         }, new HandlebarsTemplateEngine());
     }

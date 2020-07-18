@@ -1,90 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{#block "title"}}Blog{{/block}}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            rel="stylesheet"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/App.css"/>
+    <title>{{#block "title"}}Wildlife Tracker{{/block}}</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.2/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    {{#block "styles"}}{{/block}}
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-fixed-top navbar-dark" style="background-color:black;" >
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div  class="navbar-header">
-                <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span style = "float: right" class = "btn btn-default" style = "color: white" >Toggle</span>
-                </button>
-                <a style = "color: white" class="navbar-brand" href="#">HOME</a>
-            </div>
+<nav class=" navbar navbar-1 navbar-expand-lg navbar-dark ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <h2 class="h-1">Wildlife Tracker</h2>
+        <ul class="navbar-nav ml-auto nav-flex-icons ">
+            <li  class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li  class="nav-item">
+                <a class="nav-link" href="/animals">Animals</a>
+            </li>
+            <li  class="nav-item">
+                <a class="nav-link" href="/sightings">Sightings</a>
+            </li>
+            <li  class="nav-item">
+                <a class="nav-link" href="/rangers">Rangers</a>
+            </li>
+            <li  class="nav-item">
+                <a class="nav-link" href="/locations">Location</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a style = "color: white" href="/">View Sightings<span class="sr-only">(current)</span></a></li>
-                    <li class="dropdown">
-                        <a style = "color: white" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add sighting<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a style="color: orange;" href="/endangered/sighting/new">Add new endangered sighting</a></li>
-                            <li><a style="color: orange;" href="/animals/sighting/new">Add new animal sighting</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a style = "color: white" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Animals Menu <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            {{#if animals}}
-                                {{#each animals}}
-                                    <li><a style="color: orange;" href="/animals/{{id}}">{{name}}{{id}}</a></li>
-                                {{/each}}
-                                <li><a style="color: orange;" href="/animals/new">Add an animal</a></li>
+<div class="container">
+    <!--    begin main template-->
+    <div class="page-header">
+        <h1 id="h1-1">Welcome to Wildlife Tracker.</h1>
+    </div>
 
-                            {{else}}
-                                <li><a style="color: orange;" href="/animals/new">Add an animal</a></li>
-                            {{/if}}
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a style = "color: white" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Endangered Animals Menu <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            {{#if endangeredAnimals}}
-                                {{#each endangeredAnimals}}
-                                    <li><a style="color: orange;" href="/endangered/{{id}}">{{name}}{{id}}</a></li>
-                                {{/each}}
-                                <li><a style="color: orange;" href="/endangered/new">Add endangered animal</a></li>
+    <div class="col-md-12">
+        {{#block "content"}}
 
-                            {{else}}
-                                <li><a style="color: orange;" href="/endangered/new">Add endangered animal</a></li>
-                            {{/if}}
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<div class="back-body">
-    <div class="container">
-        <!--begin main template-->
-        <div class="row ">
-            <div class="col-md-2"></div>
-            <div class = "card col-md-8" style="background-color: white">
-                {{#block "content"}}
-                {{/block}}
-            </div>
-        </div>
+        {{/block}}
+
     </div>
 </div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</html>
+<!--end main template-->
+{{#block "footer"}}
+    <footer class="footer">
+        <div class="container">
+
+        </div>
+    </footer>
+    <script type="text/javascript" src="./js/jquery-3.4.0.min.js"></script>
+    <script src="./js/mdb.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    </body>
+    </html>
+{{/block}}

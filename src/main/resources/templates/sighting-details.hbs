@@ -1,0 +1,48 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+    <h1>Add a Sighting</h1>
+
+    <p>Add sighting here:</p>
+
+    <form action="/sightings" method="post">
+        <div class="form-group">
+            <label for="animalId">Animal</label>
+            <select mdb-select md-form colorful-select dropdown-secondary id='animalId' name='animalId' type='text'>
+                <option class="text-grey" value="" disabled selected>Select an Animal</option>
+                {{#each animals}}
+                    <option value="{{name}}">Name</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="rangerId">Ranger</label>
+            <select mdb-select md-form colorful-select dropdown-secondary id='rangerId' name='rangerId' type='text'>
+                <option class="text-grey" value="" disabled selected>Select a Ranger</option>
+                {{#each rangers}}
+                    <option value="{{rangerId}}">Name</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="locationId">Location</label>
+            <select mdb-select md-form colorful-select dropdown-secondary id='locationId' name='locationId' type='text'>
+                <option class="text-grey" value="" disabled selected>Select a Location</option>
+                {{#each locations}}
+                    <option value="{{locationId}}">Location</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="animalType">Animal Type</label>
+            <select mdb-select md-form colorful-select dropdown-secondary id='animalType' name='animalType' type='text'>
+                <option class="text-grey" value="" disabled selected>Select Animal Type</option>
+                <option value="animal">Animal</option>
+                <option value="endangered">Endangered</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-dark-green">Add Sighting</button>
+    </form>
+{{/partial}}
+{{> layout.hbs}}
