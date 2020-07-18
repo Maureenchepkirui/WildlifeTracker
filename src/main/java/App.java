@@ -43,6 +43,17 @@ public class App{
             model.put("endangeredAnimals", endangeredAnimals);
             return new ModelAndView(model, "Animal-form.hbs");
         }, new HandlebarsTemplateEngine() );
+        get("/wildlife/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Animal> animals = Animal.all();
+            model.put("animals", animals);
+            String name = req.queryParams("name");
+            List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
+            model.put("endangeredAnimals", endangeredAnimals);
+
+            return new ModelAndView(model, "Wildlife-View.hbs");
+        }, new HandlebarsTemplateEngine() );
+
 
         //post: process a form to create new animal
         post("/animals", (req, res) -> {
