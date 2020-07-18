@@ -1,29 +1,23 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
 {{#partial "content"}}
-    <h1>All animals</h1>
-
-
-    <div class="container">
-        {{#each animals}}
-            <div class="card-body card-body-cascade text-center">
-
-                <h4 class="card-title"><strong>{{name}}</strong></h4>
-
-                <h6 class="font-weight-bold indigo-text py-2">{{type}}</h6>
-                <br>
-                <br>
-                <form action="/animals/{{id}}/delete" method="post">
-                    <a href="/animals/{{id}}/delete"><button class="btn btn-dark-green">Delete animal</button></a>
-                </form>
+    {{#if editAnimal}}
+        <h1>Edit this animal!</h1>
+        <form class="formstyle" action="/animals/{{editAnimal.id}}" method="post">
+            <div class="form-group">
+                <label for="name">Edit this animal's name</label>
+                <input id="name" name="name" class="form-control" type="text" value="{{editAnimal.name}}">
             </div>
-        {{/each}}
-    </div>
-
-    <div class="row text-center">
-        <a href="/animals/new"><button class="btn btn-unique">Add New Non-Endangered animal</button></a>
-        <a href="/endangered/new"><button class="btn btn-unique">Add New Endangered animal</button></a>
-    </div>
+            <button type="submit" class="btn btn-default">Go!</button>
+        </form>
+    {{else}}
+        <h1>Add a new animal!</h1>
+        <form class="form" action="/animals" method="post">
+            <div class="form-group">
+                <label for="name">Enter animal's name</label>
+                <input id="name" name="name" class="form-control" type="text" value="">
+            </div>
+            <button type="submit" class="btn btn-default">Go!</button>
+        </form>
+    {{/if}}
 {{/partial}}
+
 {{> layout.hbs}}

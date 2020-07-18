@@ -289,6 +289,22 @@ height:100%;
 		transform: rotate(1turn);
 	}
 }
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  nav{
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+
+    /* background: #333; */
+    padding: 30px;
+  }
 
 
 
@@ -357,3 +373,40 @@ margin:20px;
       text-shadow: 0 0 20px #fff, 0 0 30px #2b4ebe, 0 0 40px #4276e6, 0 0 50px #4644cf, 0 0 60px #3533d1, 0 0 70px #493cbb, 0 0 80px #8beeff;
    }
 }
+button{
+        position: relative;
+      color: white;
+      background-color: black;
+      border: none;
+      padding: 10px 30px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      outline-color: transparent;
+    }
+    button::after{
+        content: '';
+        position: absolute;
+        transform: rotate(45deg);
+        top: 5px;
+        height: 20px;
+        width: 20px;
+        left: 0;
+        transition: all 0.2s ease;
+
+    }
+    button:hover{
+        box-shadow: 0 0 20px rgb(255, 255, 255);
+        border-radius: 30px;
+        transition-delay: 0.1s;
+
+    }
+    button:active{
+        box-shadow: 0 0 60px rgb(255, 255, 255);
+      transition: 0.1s ease;
+    }
+    button:hover::after{
+        left: 100%;
+      border-top: 3px solid rgb(0, 0, 0);
+      border-right: 3px solid rgb(255, 255, 255);
+      box-shadow: 15px -15px 20px rgb(255, 255, 255);
+    }

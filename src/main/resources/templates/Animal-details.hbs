@@ -1,17 +1,23 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
 {{#partial "content"}}
-    <h1>Add a Non-Endangered Animal</h1>
-
-    <p>Add animal here:</p>
-
-    <form action="/animals" method="post">
-        <div class="form-group md-form">
-            <label for="name">Animal Name</label>
-            <input id="name" name="name" type="text" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-dark-green">Add Animal</button>
-    </form>
+    <div style="color:purple; font-family:Serif">
+        <h1>{{animal.name}}</h1>
+    </div>
+    <h4 style="color:green; font-family:Serif">Here are all the sightings listed in this endangered animal:</h4>
+    <ul>
+        {{#if animalSightings}}
+            {{#each animalSightings}}
+                <li>
+                    <p><a href="/animals/{{animal.id}}/sightings/{{id}}">{{rangerName}}-{{location}}</a></p>
+                </li>
+            {{/each}}
+        {{else}}
+            <p>No sightings yet</p>
+        {{/if}}
+    </ul>
+    <div class="row">
+        <a class="btn btn-info" href="/animals/{{animal.id}}/edit">Edit this animal</a>
+        <a class="btn btn-info"  href="/animals/{{animal.id}}/delete">DELETE this animal</a>
+    </div>
 {{/partial}}
+
 {{> layout.hbs}}

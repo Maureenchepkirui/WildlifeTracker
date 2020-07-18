@@ -1,13 +1,20 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
-{{#partial "content"}}
-    <h1 id="h1-1">Interact With our App</h1>
-    <div class="container cont-2 cont-2-3-1" id="cont-0">
-        <div class="col-md-12 text-center">
-            <!--            <button type="button"  class="btn mdb-color darken-3 animated  infinite btn-1"><a href="/squad">Add animal<i class="fas fa-angle-double-down "></i></a></button>-->
-        </div>
-    </div>
+{{#partial 'content'}}
 
+    <div style="color:purple; font-family:Serif; text-align:center">
+        <h1> List of Sightings!</h1>
+    </div>
+    {{#if sightings}}
+        {{#each sightings }}
+            <div class="sight" style="margin: 20px;">
+                <p style="font-family:san Serif; padding:10px; font-size:18px;">{{location}}-{{rangerName}}
+                    <span class="btn btn-info" style="float: right;"><a style="color: white;" href="/animals/{{animalId}}/sightings/{{id}}">View Details</a></span>
+                </p>
+                <hr>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No sightings yet!</p>
+    {{/if}}
 {{/partial}}
+
 {{> layout.hbs}}

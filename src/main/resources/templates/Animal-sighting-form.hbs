@@ -1,17 +1,67 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
 {{#partial "content"}}
-    <h1>Edit a Non-Endangered Animal</h1>
-
-    <p>Edit the animal here:</p>
-
-    <form action="/animals/{{id}}/edit" method="post">
-        <div class="form-group">
-            <label for="name">Animal Name</label>
-            <input id="name" name="name" type="text" class="form-control">
+    {{#if editSighting}}
+        <div style="color:purple; text-align: center;">
+            <h1>Edit this Sighting!</h1>
         </div>
-        <button type="submit" class="btn btn-dark-green">Edit Animal</button>
-    </form>
+        <form class="form" action="/animalsighting/{{editSighting.id}}" method="post">
+            <div class="form-group">
+                <label for="name">Edit ranger's name:</label>
+                <br>
+                <input id="name" name="name" class="form-control" type="text" value="{{editSighting.rangerName}}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="location">Edit location:</label>
+                <select id="location" name="location" class="form-control">
+                    <option value="Zone A">Zone A</option>
+                    <option value="Zone B">Zone B</option>
+                    <option value="Zone C">Zone C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="animalId">Update this sighting's animal:</label>
+                <select id="animalId" name="animalId" class="form-control">
+                    {{#each animals}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <p>Don't see the right animal?<a href="/animals/new">Add a new one first.</a></p>
+            </div>
+            <button type="submit" class="btn btn-default">Go!</button>
+        </form>
+    {{else}}
+        <div style="color:purple; text-align:center;">
+            <h2>Add a new Sighting!</h2>
+        </div>
+        <form class="form" action="/animalsighting" method="post">
+            {{#if animals}}
+                <div class="form-group">
+                    <label for="name">Enter ranger's name:</label>
+                    <input id="name" name="name" class="form-control" type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label for="location">Enter location:</label>
+                    <select id="location" name="location" class="form-control">
+                        <option value="Zone A">Zone A</option>
+                        <option value="Zone B">Zone B</option>
+                        <option value="Zone C">Zone C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="animalId">Enter animal:</label>
+                    <select id="animalId" name="animalId" class="form-control">
+                        {{#each animals}}
+                            <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <a href="/animals/new" class="btn-warning btn-sm">ADD NEW</a>
+                    <button type="submit" class="btn btn-warning">SUBMIT</button>
+                </div>
+            {{else}}
+                <h3> You'll need to add an animal before you add a sighting. <a href="/animals/new">Add one here.</a> </h3>
+            {{/if}}
+        </form>
+    {{/if}}
 {{/partial}}
+
 {{> layout.hbs}}

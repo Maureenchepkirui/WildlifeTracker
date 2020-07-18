@@ -1,35 +1,27 @@
-{{#partial "styles"}}
-    <link rel='stylesheet' href='/css/styles.css'>
-{{/partial}}
 {{#partial "content"}}
-    <h1>Edit an Endangered Animal</h1>
-
-    <p>Edit the animal here:</p>
-
-    <form action="/endangered" method="post">
-        <div class="form-group">
-            <label for="name">Animal Name</label>
-            <input id="name" name="name" type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="Age">Age</label>
-            <select mdb-select md-form colorful-select dropdown-secondary id='age' name='age' type='text'>
-                <option class="text-grey" value="" disabled selected>Select Age</option>
-                <option value="EndangeredAnimal.ADULT">Adult</option>
-                <option value="EndangeredAnimal.YOUNG">Young</option>
-                <option value="EndangeredAnimal.NEWBORN">Newborn</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="Age">Age</label>
-            <select mdb-select md-form colorful-select dropdown-secondary id='health' name='health' type='text'>
-                <option class="text-grey" value="" disabled selected>Select Health</option>
-                <option value="EndangeredAnimal.HEALTHY">Healthy</option>
-                <option value="EndangeredAnimal.AVERAGE">Average</option>
-                <option value="EndangeredAnimal.ILL">Ill</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-dark-green">Edit Endangered Animal</button>
-    </form>
+    <div style="color:purple; font-family:Serif">
+        <h1>{{animal.name}}</h1>
+    </div>
+    <ul>
+        <li>health: {{animal.health}}</li>
+        <li>age: {{animal.age}}</li>
+    </ul>
+    <h4 style="color:green; font-family:Serif">Here are all the sightings listed in this endangered animal:</h4>
+    <ul>
+        {{#if animalSightings}}
+            {{#each animalSightings}}
+                <li>
+                    <p><a href="/endangered/{{animal.id}}/sightings/{{id}}">{{rangerName}}-{{location}}</a></p>
+                </li>
+            {{/each}}
+        {{else}}
+            <p>No sightings yet</p>
+        {{/if}}
+    </ul>
+    <div class="row">
+        <a class="btn btn-info" href="/endangered/{{animal.id}}/edit">Edit this animal</a>
+        <a class="btn btn-info"  href="/endangered/{{animal.id}}/delete">DELETE this animal</a>
+    </div>
 {{/partial}}
+
 {{> layout.hbs}}
