@@ -135,17 +135,17 @@ public class App{
         }, new HandlebarsTemplateEngine() );
 
         //get an animal's details together with sightings reported
-        get("/animals/:id", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            int idOfAnimalToFind = Integer.parseInt(req.params("id"));
-            Animal foundAnimal = Animal.findById(idOfAnimalToFind);
-            model.put("animal", foundAnimal);
-            List<Sighting> allSightingsByAnimal = foundAnimal.findSightings();
-            model.put("sightings", allSightingsByAnimal);
-            model.put("animals", Animal.all()); //refresh list of links for navbar
-            model.put("endangeredAnimals", EndangeredAnimal.allEndangered());
-            return new ModelAndView(model, "Animal-details.hbs");
-        }, new HandlebarsTemplateEngine());
+//        get("/animals/:id", (req, res) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            int idOfAnimalToFind = Integer.parseInt(req.params("id"));
+//            Animal foundAnimal = Animal.findById(idOfAnimalToFind);
+//            model.put("animal", foundAnimal);
+//            List<Sighting> allSightingsByAnimal = foundAnimal.findSightings();
+//            model.put("sightings", allSightingsByAnimal);
+//            model.put("animals", Animal.all()); //refresh list of links for navbar
+//            model.put("endangeredAnimals", EndangeredAnimal.allEndangered());
+//            return new ModelAndView(model, "Animal-details.hbs");
+//        }, new HandlebarsTemplateEngine());
 
         //get endangered animal's details together with sightings reported
         get("/endangered/:id", (req, res) -> {
