@@ -1,35 +1,40 @@
 {{#partial "content"}}
 
-<div class="row">
-  <div class="col-md-6">
-   <div class="Animal">
-       <h1 class="light">AVAILABLE ENDANGERED ANIMALS</h1><br><br>
-       {{#if endangeredAnimals}}
-           {{#each endangeredAnimals}}
-               <p class="gs">{{name}}</p>
-           {{/each}}
+
+  <div class="card">
+      <div class="row">
+          <div class="col-md-6">
+              <h1 class="glow">ENDANGERED ANIMALS</h1><br><br>
+                  {{#if endangeredAnimals}}
+                      {{#each endangeredAnimals}}
+                          <p>{{name}}</p>
+                      {{/each}}
 
 
-       {{else}}
-           <li><a style="color: orange;" href="/endangered/new">Add endangered animal</a></li>
-       {{/if}}
-   </div>
-  </div>
-    <div class="col-md 6">
-        <div class="animal">
-            <h1 class="light">AVAILABLE NON-ENDANGERED ANIMALS</h1><br><br>
-            {{#if animals}}
-                {{#each animals}}
-                    <p class="gs">{{name}}</p>
-                {{/each}}
+                  {{else}}
+                      <li><a style="color: orange;" href="/endangered/new">Add endangered animal</a></li>
+                  {{/if}}
+              </div>
+          </div>
+
+              <div class="row">
+                  <div class="col-md 6">
+
+                          <h1  class="glow"style="text-align:center;">NON-ENDANGERED ANIMALS</h1><br><br>
+                          {{#if animals}}
+                              {{#each animals}}
+                                  <p>{{name}}</p>
+                              {{/each}}
 
 
-            {{else}}
-                <li><a style="color: orange;" href="/animals/new">Add an animal</a></li>
-            {{/if}}
-        </div>
-    </div>
-</div>
+                          {{else}}
+                              <li><a style="color: orange;" href="/animals/new">Add an animal</a></li>
+                          {{/if}}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 {{/partial}}
 
 {{> layout.hbs}}

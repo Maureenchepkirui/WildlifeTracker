@@ -1,7 +1,7 @@
 {{#partial "content"}}
     {{#if editEndangered}}
         <h1>Edit this endangered animal!</h1>
-        <form class="form" action="/endangered/{{editEndangered.id}}" method="post">
+        <form class="formstyle" action="/endangered/{{editEndangered.id}}" method="post">
             <div class="form-group">
                 <label for="name">Edit this endangered animal's name</label>
                 <input id="name" name="name" class="form-control" type="text" value="{{editEndangered.name}}">
