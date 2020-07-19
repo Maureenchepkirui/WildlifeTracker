@@ -22,8 +22,11 @@ public class App{
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
+
+
+
         //get: show all listed sightings and both endangered and non endangered animals
-        get("/sightings/view", (req, res) -> {
+        get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
             model.put("animals", animals);
