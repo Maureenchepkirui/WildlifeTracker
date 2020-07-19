@@ -23,7 +23,7 @@ public class App{
         staticFileLocation("/public");
 
         //get: show all listed sightings and both endangered and non endangered animals
-        get("/", (req, res) -> {
+        get("/sightings/view", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
             model.put("animals", animals);
@@ -31,7 +31,7 @@ public class App{
             model.put("endangeredAnimals", endangeredAnimals);
             List<Sighting> sightings = Sighting.all();
             model.put("sightings", sightings);
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model, "sightings-view.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //get: show form to create a new animal
