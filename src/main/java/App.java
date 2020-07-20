@@ -57,22 +57,6 @@ public class App{
             return new ModelAndView(model, "Wildlife-View.hbs");
         }, new HandlebarsTemplateEngine() );
 
-
-        //post: process a form to create new animal
-        post("/animals", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            String animalName = req.queryParams("name");
-            Animal newAnimal = new Animal(animalName);
-            try{
-                newAnimal.save();
-                res.redirect("/");
-                return null;
-            } catch (NullPointerException exception) {
-                return new ModelAndView(model, "exceptions.hbs");
-            }
-        }, new HandlebarsTemplateEngine() );
-
-        //get: show form to create new endangered animal
         get("/endangered/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
@@ -249,6 +233,19 @@ public class App{
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
             return new ModelAndView(model, "Endangered-sighting-form.hbs");
+        }, new HandlebarsTemplateEngine() );
+// <.............this route will handle exeptions ..................
+        post("/animals", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String animalName = req.queryParams("name");
+            Animal newAnimal = new Animal(animalName);
+            try{
+                newAnimal.save();
+                res.redirect("/");
+                return null;
+            } catch (NullPointerException exception) {
+                return new ModelAndView(model, "exceptions.hbs");
+            }
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to record new endangered animal sighting
