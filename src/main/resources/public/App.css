@@ -275,6 +275,13 @@ color: white;
     color: #fff6a9;
   }
 }
+.glows {
+  font-size: 20px;
+  color: yellow;
+  font-weight:900;
+  text-align: center;
+
+}
 .glow {
   font-size: 40px;
   color: yellow;
@@ -285,6 +292,7 @@ color: white;
   animation: glow 1s ease-in-out infinite alternate;
   animation: 1s ease-out 0s 1 slideInFromLeft;
 }
+
 
 @-webkit-keyframes glow {
   from {
@@ -536,6 +544,9 @@ button{
             }
             .black{
             background-color:black;
+            }
+            .footer{
+            animation: 1s ease-out 0s 1 slideInFromLeft;
             }
 
 
