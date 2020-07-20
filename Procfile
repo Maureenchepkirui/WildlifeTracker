@@ -1,1 +1,1 @@
-web: ./build/install/Wildlife-Tracker/bin/Wildlife-Tracker
+web: ./build/install/todo/bin/todo
