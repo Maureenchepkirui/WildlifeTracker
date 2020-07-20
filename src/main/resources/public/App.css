@@ -13,6 +13,9 @@ font-family: 'El Messiri', sans-serif;
 color: #D4AF37;
 
 }
+::placeholder {
+      color: gold;
+    }
 .sight{
 background-image: url('images/jaguar-bold.jpg');
 background-repeat: no-repeat;
