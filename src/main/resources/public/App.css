@@ -483,3 +483,12 @@ button{
         ::placeholder {
               color: gold;
             }
+            hr{
+             background-color:green;
+
+            }
+            .title{
+            background-image: url("/images/kangaroos-in-sunset.jpg");
+            background-size:cover;
+
+            }
