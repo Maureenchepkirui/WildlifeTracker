@@ -2,7 +2,7 @@
 
 ## screenshot
 
-![](screenshot.png)
+![](Screenshot2.png)
 
 # DESCRIPTION
 ```bash
