@@ -16,14 +16,10 @@ font-size:20px;
 
 }
 .sight{
-background-image: url('images/jaguar-bold.jpg');
-background-repeat: no-repeat;
-height:100%;
-background-size: cover;
-background-position: center ;
+background-color:black;
 font-size:20px;
 font-weight:900;
-color:Yellow;
+color:;
 font-family:'El Messiri', sans-serif;
  height:100%;
  animation: 1s ease-out 0s 1 slideInFromLeft;
@@ -291,6 +287,7 @@ color: white;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
   animation: 1s ease-out 0s 1 slideInFromLeft;
+  background-color:black;
 }
 
 
