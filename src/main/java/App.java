@@ -46,7 +46,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "Animal-form.hbs");
+            return new ModelAndView(model, "Non-Endangered-form.hbs");
         }, new HandlebarsTemplateEngine() );
 //  <.....................this route will allow a user to view both endangered and non-endangered animals present on the list........
         get("/wildlife/new", (req, res) -> {
@@ -143,7 +143,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "Animal-form.hbs");
+            return new ModelAndView(model, "Non-Endangered-form.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process form to update animal
@@ -207,7 +207,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "Animal-sighting-form.hbs");
+            return new ModelAndView(model, "Non-Endangered-sighting-form.hbs");
         }, new HandlebarsTemplateEngine() );
 
         //post: process a form to record new animal sighting
@@ -293,7 +293,7 @@ public class App{
             model.put("animals", animals);
             List<EndangeredAnimal> endangeredAnimals = EndangeredAnimal.allEndangered();
             model.put("endangeredAnimals", endangeredAnimals);
-            return new ModelAndView(model, "Animal-sighting-form.hbs");
+            return new ModelAndView(model, "Non-Endangered-sighting-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         //post: process form to update a sighting
