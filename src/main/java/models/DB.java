@@ -6,6 +6,9 @@ import java.net.URISyntaxException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static models.Environment.PASS_WORD;
+import static models.Environment.USER_NAME;
+
 
 public class DB {
     private static URI dbUri;
@@ -26,8 +29,8 @@ public class DB {
             int port = dbUri.getPort();
             String host = dbUri.getHost();
             String path = dbUri.getPath();
-            String username = (dbUri.getUserInfo() == null) ? "maureenbett" : dbUri.getUserInfo().split(":")[0];
-            String password = (dbUri.getUserInfo() == null) ? "kenyan082bett" : dbUri.getUserInfo().split(":")[1];
+            String username = (dbUri.getUserInfo() == null) ? USER_NAME : dbUri.getUserInfo().split(":")[0];
+            String password = (dbUri.getUserInfo() == null) ? PASS_WORD: dbUri.getUserInfo().split(":")[1];
 
             sql2o = new Sql2o("jdbc:postgresql://" + host + ":" + port + path, username, password);
         } catch (URISyntaxException e ) {
