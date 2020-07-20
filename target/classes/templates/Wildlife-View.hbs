@@ -1,6 +1,11 @@
 {{#partial "content"}}
 
-
+<h1 class="glow">WELCOME TO WILDLIFE TRACKER<br>HERE YOU'LL GET TO SEE ALL ANIMALS ON OUR LIST</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
       <div class="row">
              <div class="col-md-6">
                 <div class="card">
@@ -8,6 +13,7 @@
                       {{#if endangeredAnimals}}
                       {{#each endangeredAnimals}}
                           <p>{{name}}</p>
+                          <hr>
                       {{/each}}
 
                       {{else}}
@@ -23,6 +29,7 @@
                    {{#if animals}}
                     {{#each animals}}
                       <p>{{name}}</p>
+                        <hr>
                        {{/each}}
 
 

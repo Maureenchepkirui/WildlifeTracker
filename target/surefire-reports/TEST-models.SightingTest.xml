@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SightingTest" time="0.733" tests="17" errors="0" skipped="0" failures="0">
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="17" failures="0" name="models.SightingTest" time="0.459" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.7+10"/>
@@ -20,7 +20,8 @@
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="line.separator" value="&#10;"/>
+    <property name="line.separator" value="
+"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Linux"/>
     <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
@@ -61,21 +62,21 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="save_throwsExceptionIfNameNull" classname="models.SightingTest" time="0"/>
-  <testcase name="save_recordsTimeOfCreationInDatabase" classname="models.SightingTest" time="0.1"/>
-  <testcase name="equal_sightingsWithSameLocationRangerNameAndAnimalIdAreEqual" classname="models.SightingTest" time="0.01"/>
-  <testcase name="save_sightingIsSavedCorrectlyOnEntry" classname="models.SightingTest" time="0.1"/>
-  <testcase name="newSighting_newSightingInstantiatesCorrectly" classname="models.SightingTest" time="0.008"/>
-  <testcase name="update_throwsExceptionIfNullLocationRangerName" classname="models.SightingTest" time="0.035"/>
-  <testcase name="clearAll_nothingReturnsFromClearedTable" classname="models.SightingTest" time="0.192"/>
-  <testcase name="getRangerName_newSightingInstantiatesCorrectlyWithRangerName" classname="models.SightingTest" time="0.006"/>
-  <testcase name="getLocation_newSightingInstantiatesCorrectlyWithLocation" classname="models.SightingTest" time="0.006"/>
-  <testcase name="update_sightingInstanceIsUpdatedCorrectly" classname="models.SightingTest" time="0.049"/>
-  <testcase name="getAnimalId_newSightingInstantiatesCorrectlyWithAnimalId" classname="models.SightingTest" time="0.006"/>
-  <testcase name="update_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.026"/>
-  <testcase name="findById_savedSightingCanBeFoundById" classname="models.SightingTest" time="0.033"/>
-  <testcase name="all_allSavedSightingsReturnedCorrectly" classname="models.SightingTest" time="0.055"/>
-  <testcase name="deleteById_sightingInstanceDeletedCorrectlyById" classname="models.SightingTest" time="0.055"/>
-  <testcase name="save_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.007"/>
-  <testcase name="save_assignsIdToSighting" classname="models.SightingTest" time="0.036"/>
+  <testcase classname="models.SightingTest" name="save_throwsExceptionIfNameNull" time="0"/>
+  <testcase classname="models.SightingTest" name="save_recordsTimeOfCreationInDatabase" time="0.064"/>
+  <testcase classname="models.SightingTest" name="equal_sightingsWithSameLocationRangerNameAndAnimalIdAreEqual" time="0.006"/>
+  <testcase classname="models.SightingTest" name="save_sightingIsSavedCorrectlyOnEntry" time="0.039"/>
+  <testcase classname="models.SightingTest" name="newSighting_newSightingInstantiatesCorrectly" time="0.006"/>
+  <testcase classname="models.SightingTest" name="update_throwsExceptionIfNullLocationRangerName" time="0.037"/>
+  <testcase classname="models.SightingTest" name="clearAll_nothingReturnsFromClearedTable" time="0.036"/>
+  <testcase classname="models.SightingTest" name="getRangerName_newSightingInstantiatesCorrectlyWithRangerName" time="0.006"/>
+  <testcase classname="models.SightingTest" name="getLocation_newSightingInstantiatesCorrectlyWithLocation" time="0.007"/>
+  <testcase classname="models.SightingTest" name="update_sightingInstanceIsUpdatedCorrectly" time="0.049"/>
+  <testcase classname="models.SightingTest" name="getAnimalId_newSightingInstantiatesCorrectlyWithAnimalId" time="0.006"/>
+  <testcase classname="models.SightingTest" name="update_locationRangerNameCannotBeNull" time="0.027"/>
+  <testcase classname="models.SightingTest" name="findById_savedSightingCanBeFoundById" time="0.033"/>
+  <testcase classname="models.SightingTest" name="all_allSavedSightingsReturnedCorrectly" time="0.045"/>
+  <testcase classname="models.SightingTest" name="deleteById_sightingInstanceDeletedCorrectlyById" time="0.055"/>
+  <testcase classname="models.SightingTest" name="save_locationRangerNameCannotBeNull" time="0.008"/>
+  <testcase classname="models.SightingTest" name="save_assignsIdToSighting" time="0.035"/>
 </testsuite>
