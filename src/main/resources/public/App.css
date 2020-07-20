@@ -13,9 +13,6 @@ font-family: 'El Messiri', sans-serif;
 color: #D4AF37;
 
 }
-::placeholder {
-      color: gold;
-    }
 .sight{
 background-image: url('images/jaguar-bold.jpg');
 background-repeat: no-repeat;
@@ -476,3 +473,6 @@ button{
           border-right: 3px solid rgb(255, 255, 255);
           box-shadow: 15px -15px 20px rgb(255, 255, 255);
         }
+        ::placeholder {
+              color: gold;
+            }
