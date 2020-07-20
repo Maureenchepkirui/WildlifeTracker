@@ -248,7 +248,7 @@ public class App{
             }
         }, new HandlebarsTemplateEngine() );
 
-        //post: process a form to record new endangered animal sighting
+        //route to record a new endangered sighting and handle it's exceptions...................
         post("/endangeredsighting", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             String rangerName = req.queryParams("rangerName");
@@ -263,8 +263,7 @@ public class App{
                 return  new ModelAndView(model, "exceptions.hbs");
             }
         }, new HandlebarsTemplateEngine() );
-
-        //get individual sighting with its details
+//path that will display each details of sightings.........................................
         get("/animals/:animal_id/sightings/:sighting_id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfSightingToFind = Integer.parseInt(req.params("sighting_id"));
@@ -282,7 +281,6 @@ public class App{
             return new ModelAndView(model, "Sighting-details.hbs");
         }, new HandlebarsTemplateEngine());
 
-        //get: show form to update a sighting
         get("/animals/sighting/:id/edit", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfSightingToEdit = Integer.parseInt(req.params("id"));
