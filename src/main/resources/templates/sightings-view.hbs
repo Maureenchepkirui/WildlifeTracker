@@ -1,21 +1,28 @@
 {{#partial 'content'}}
+<div class="row">
+    <div class="col-md-6">
+        <div class="sight">
+            <h1>REPORTED SIGHTINGS</h1>
 
 
-        <h1>REPORTED SIGHTINGS</h1>
+            {{#if sightings}}
+                {{#each sightings }}
+                    <div class="sighting">
+                        <p>Sighting reported by Ranger {{rangerName}} at {{location}}
+                            <a href="/animals/{{animalId}}/sightings/{{id}}" class="button btn-warning btn-sm">SEE MORE</a>
+
+                        </p>
+                        <hr>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>No SIGHTINGS REPORTED!!</p>
+            {{/if}}
+        </div>
+    </div>
+</div>
 
 
-    {{#if sightings}}
-        {{#each sightings }}
-            <div class="sighting">
-                <p>{{location}}-{{rangerName}}
-                    <span class="btn btn-warning" style="float: right;"><a href="/animals/{{animalId}}/sightings/{{id}}">View Details</a></span>
-                </p>
-                <hr>
-            </div>
-        {{/each}}
-    {{else}}
-        <p>No SIGHTINGS REPORTED!!</p>
-    {{/if}}
 {{/partial}}
 
 {{> layout.hbs}}

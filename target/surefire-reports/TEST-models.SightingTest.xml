@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SightingTest" time="0.504" tests="17" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SightingTest" time="0.733" tests="17" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.7+10"/>
@@ -62,20 +62,20 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase name="save_throwsExceptionIfNameNull" classname="models.SightingTest" time="0"/>
-  <testcase name="save_recordsTimeOfCreationInDatabase" classname="models.SightingTest" time="0.037"/>
-  <testcase name="equal_sightingsWithSameLocationRangerNameAndAnimalIdAreEqual" classname="models.SightingTest" time="0.006"/>
-  <testcase name="save_sightingIsSavedCorrectlyOnEntry" classname="models.SightingTest" time="0.038"/>
-  <testcase name="newSighting_newSightingInstantiatesCorrectly" classname="models.SightingTest" time="0.007"/>
-  <testcase name="update_throwsExceptionIfNullLocationRangerName" classname="models.SightingTest" time="0.026"/>
-  <testcase name="clearAll_nothingReturnsFromClearedTable" classname="models.SightingTest" time="0.061"/>
+  <testcase name="save_recordsTimeOfCreationInDatabase" classname="models.SightingTest" time="0.1"/>
+  <testcase name="equal_sightingsWithSameLocationRangerNameAndAnimalIdAreEqual" classname="models.SightingTest" time="0.01"/>
+  <testcase name="save_sightingIsSavedCorrectlyOnEntry" classname="models.SightingTest" time="0.1"/>
+  <testcase name="newSighting_newSightingInstantiatesCorrectly" classname="models.SightingTest" time="0.008"/>
+  <testcase name="update_throwsExceptionIfNullLocationRangerName" classname="models.SightingTest" time="0.035"/>
+  <testcase name="clearAll_nothingReturnsFromClearedTable" classname="models.SightingTest" time="0.192"/>
   <testcase name="getRangerName_newSightingInstantiatesCorrectlyWithRangerName" classname="models.SightingTest" time="0.006"/>
-  <testcase name="getLocation_newSightingInstantiatesCorrectlyWithLocation" classname="models.SightingTest" time="0.007"/>
-  <testcase name="update_sightingInstanceIsUpdatedCorrectly" classname="models.SightingTest" time="0.059"/>
-  <testcase name="getAnimalId_newSightingInstantiatesCorrectlyWithAnimalId" classname="models.SightingTest" time="0.007"/>
-  <testcase name="update_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.039"/>
-  <testcase name="findById_savedSightingCanBeFoundById" classname="models.SightingTest" time="0.041"/>
+  <testcase name="getLocation_newSightingInstantiatesCorrectlyWithLocation" classname="models.SightingTest" time="0.006"/>
+  <testcase name="update_sightingInstanceIsUpdatedCorrectly" classname="models.SightingTest" time="0.049"/>
+  <testcase name="getAnimalId_newSightingInstantiatesCorrectlyWithAnimalId" classname="models.SightingTest" time="0.006"/>
+  <testcase name="update_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.026"/>
+  <testcase name="findById_savedSightingCanBeFoundById" classname="models.SightingTest" time="0.033"/>
   <testcase name="all_allSavedSightingsReturnedCorrectly" classname="models.SightingTest" time="0.055"/>
-  <testcase name="deleteById_sightingInstanceDeletedCorrectlyById" classname="models.SightingTest" time="0.066"/>
-  <testcase name="save_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.005"/>
+  <testcase name="deleteById_sightingInstanceDeletedCorrectlyById" classname="models.SightingTest" time="0.055"/>
+  <testcase name="save_locationRangerNameCannotBeNull" classname="models.SightingTest" time="0.007"/>
   <testcase name="save_assignsIdToSighting" classname="models.SightingTest" time="0.036"/>
 </testsuite>

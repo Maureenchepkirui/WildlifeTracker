@@ -1,0 +1,77 @@
+{{#partial "content"}}
+    {{#if editSighting}}
+        <div style="color:purple; text-align: center;">
+            <h1>INVALID CREDENTIALS?EDIT HERE:</h1>
+        </div>
+        <form class="formstyle" action="/endangeredsighting/{{editSighting.id}}" method="post">
+            <div class="form-group">
+                <label for="name">INVALID RANGER NAME?EDIT HERE:</label>
+                <input id="name" name="name" class="form-control" type="text" value="{{sighting.rangerName}}">
+            </div>
+            <div class="form-group">
+                <label for="location">EDIT YOUR LOCATION:</label>
+                <select id="location" name="location" class="form-control">
+                    <option value="Riverbank">Riverbank</option>
+                    <option value="Forest clearing">Forest clearing</option>
+                    <option value="NE Quadrant">NE Quadrant</option>
+                    <option value="SW Quadrant">SW Quadrant</option>
+                    <option value="Southern Quadrant">Southern Quadrant</option>
+                    <option value="Eastern Valley">Eastern Valley</option>
+                    <option value="Central Dam">Central Dam</option>
+                    <option value="Water Reservoir">NE Quadrant</option>
+                    <option value="Baboon Estate">NE Quadrant</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="animalId">EDIT ANIMAL HERE</label>
+                <select id="animalId" name="animalId" class="form-control">
+                    {{#each endangeredAnimals}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <p>Don't see the right endangered animal?<a href="/endangered/new">Add a new one first.</a></p>
+            </div>
+            <button type="submit" class="btn btn-default">Go!</button>
+        </form>
+    {{else}}
+        <div style="color:purple; text-align:center;">
+            <h2>Add a new Sighting!</h2>
+        </div>
+        <form class="formstyle" action="/endangeredsighting" method="post">
+            {{#if endangeredAnimals}}
+                <div class="form-group">
+                    <label for="rangerName">Enter ranger's name:</label>
+                    <input id="rangerName" name="rangerName" class="form-control" type="text" value="">
+                </div>
+                <div class="form-group">
+                    <label for="location">Enter location:</label>
+                    <select id="location" name="location" class="form-control">
+                        <option value="Riverbank">Riverbank</option>
+                        <option value="Forest clearing">Forest clearing</option>
+                        <option value="NE Quadrant">NE Quadrant</option>
+                        <option value="SW Quadrant">SW Quadrant</option>
+                        <option value="Southern Quadrant">Southern Quadrant</option>
+                        <option value="Eastern Valley">Eastern Valley</option>
+                        <option value="Central Dam">Central Dam</option>
+                        <option value="Water Reservoir">NE Quadrant</option>
+                        <option value="Baboon Estate">NE Quadrant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="animalId">Enter endangered animal:</label>
+                    <select id="animalId" name="animalId" class="form-control">
+                        {{#each endangeredAnimals}}
+                            <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    <p>Don't see the right endangered animal?<a href="/endangered/new">Add a new one first.</a></p>
+                    <button type="submit" class="btn btn-default">Go!</button>
+                </div>
+            {{else}}
+                <h3> You'll need to add an endangered animal before you add a sighting. <a href="/endangered/new">Add one here.</a> </h3>
+            {{/if}}
+        </form>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}

@@ -1,0 +1,4 @@
+dbRule/DatabaseRule.class
+models/SightingTest.class
+models/EndangeredAnimalTest.class
+models/AnimalTest.class

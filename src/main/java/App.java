@@ -24,8 +24,7 @@ public class App{
 
 
 
-
-        //get: show all listed sightings and both endangered and non endangered animals
+//<.....................................this route will display sightings to the user.................................
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
@@ -37,7 +36,7 @@ public class App{
             return new ModelAndView(model, "sightings-view.hbs");
         }, new HandlebarsTemplateEngine() );
 
-        //get: show form to create a new animal
+// <................................this is the route to allow a user add a new animal to the list.......................
         get("/animals/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
@@ -46,6 +45,7 @@ public class App{
             model.put("endangeredAnimals", endangeredAnimals);
             return new ModelAndView(model, "Animal-form.hbs");
         }, new HandlebarsTemplateEngine() );
+//  <.....................this route will allow a user to view both endangered and non-endangered animals present on the list........
         get("/wildlife/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
@@ -134,20 +134,6 @@ public class App{
             return null;
         }, new HandlebarsTemplateEngine() );
 
-        //get an animal's details together with sightings reported
-//        get("/animals/:id", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            int idOfAnimalToFind = Integer.parseInt(req.params("id"));
-//            Animal foundAnimal = Animal.findById(idOfAnimalToFind);
-//            model.put("animal", foundAnimal);
-//            List<Sighting> allSightingsByAnimal = foundAnimal.findSightings();
-//            model.put("sightings", allSightingsByAnimal);
-//            model.put("animals", Animal.all()); //refresh list of links for navbar
-//            model.put("endangeredAnimals", EndangeredAnimal.allEndangered());
-//            return new ModelAndView(model, "Animal-details.hbs");
-//        }, new HandlebarsTemplateEngine());
-
-        //get endangered animal's details together with sightings reported
         get("/endangered/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int idOfAnimalToFind = Integer.parseInt(req.params("id"));

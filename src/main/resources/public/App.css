@@ -13,6 +13,30 @@ font-family: 'El Messiri', sans-serif;
 color: #D4AF37;
 
 }
+.sight{
+background-image: url('images/jaguar-bold.jpg');
+background-repeat: no-repeat;
+height:100%;
+background-size: cover;
+background-position: center ;
+font-size:20px;
+font-weight:900;
+color:Yellow;
+font-family:'El Messiri', sans-serif;
+ height:100%;
+}
+.Details{
+background-image: url('images/jaguar-bold.jpg');
+background-repeat: no-repeat;
+height:100%;
+background-size: cover;
+background-position: center ;
+font-size:20px;
+font-weight:900;
+color:Yellow;
+font-family:'El Messiri', sans-serif;
+ height:100%;
+}
 .animal{
 background-image: url('https://www.silverkris.com/wp-content/uploads/2017/02/Kaziranga-India_Free-Stock-Image_Pexels.com_.jpeg');
 background-repeat: no-repeat;
@@ -63,7 +87,7 @@ font-size: calc(2px + 18vh);
 /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
     0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
   color: #fccaff; */
-  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  text-shadow: 0 0 5px #8B0000, 0 0 15px #8B0000, 0 0 20px #8B0000, 0 0 40px#8B0000, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
     color: #fff6a9;
   font-family: "Sacramento", cursive;
   text-align: center;
@@ -295,7 +319,7 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
     padding: 30px;
   }
   .card{
-  background-image: url('https://www.silverkris.com/wp-content/uploads/2017/02/Kaziranga-India_Free-Stock-Image_Pexels.com_.jpeg');
+  background-image: url(images/kangaroos-in-sunset.jpg);
   background-repeat: no-repeat;
   height:100%;
   background-size: cover;
@@ -306,6 +330,18 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
   font-family:'El Messiri', sans-serif;
   height:100%;
   }
+  .Kard{
+    background-image: url(images/jaguar-bold.jpg);
+    background-repeat: no-repeat;
+    height:100%;
+    background-size: cover;
+    background-position: center ;
+    font-size:20px;
+    font-weight:900;
+    color:Yellow;
+    font-family:'El Messiri', sans-serif;
+    height:100%;
+    }
 
 
 
@@ -400,3 +436,40 @@ button{
       border-right: 3px solid rgb(255, 255, 255);
       box-shadow: 15px -15px 20px rgb(255, 255, 255);
     }
+    a{
+            position: relative;
+          color: white;
+          background-color: black;
+          border: none;
+          padding: 10px 30px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          outline-color: transparent;
+        }
+        a::after{
+            content: '';
+            position: absolute;
+            transform: rotate(45deg);
+            top: 5px;
+            height: 20px;
+            width: 20px;
+            left: 0;
+            transition: all 0.2s ease;
+
+        }
+        a:hover{
+            box-shadow: 0 0 20px rgb(255, 255, 255);
+            border-radius: 30px;
+            transition-delay: 0.1s;
+
+        }
+        a:active{
+            box-shadow: 0 0 60px rgb(255, 255, 255);
+          transition: 0.1s ease;
+        }
+        a:hover::after{
+            left: 100%;
+          border-top: 3px solid rgb(0, 0, 0);
+          border-right: 3px solid rgb(255, 255, 255);
+          box-shadow: 15px -15px 20px rgb(255, 255, 255);
+        }
