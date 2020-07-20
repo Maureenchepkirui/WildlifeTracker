@@ -21,11 +21,14 @@ public class App{
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
-
-
+//get to display the default page interacting with the user
+        get("/",(request, response) -> {
+            Map<String,Object> model=new HashMap<String, Object>();
+            return new ModelAndView(model,"index.hbs");
+        },new HandlebarsTemplateEngine());
 
 //<.....................................this route will display sightings to the user.................................
-        get("/", (req, res) -> {
+        get("/view/wildlife", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<Animal> animals = Animal.all();
             model.put("animals", animals);
