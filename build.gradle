@@ -25,4 +25,3 @@ dependencies {
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.2'
 }
 applicationName = "Wildlife-Tracker"
-task stage(dependsOn: ['clean', 'installDist'])
