@@ -548,5 +548,21 @@ button{
             .footer{
             animation: 1s ease-out 0s 1 slideInFromLeft;
             }
+            @media only screen and (max-width:800px) {
+              /* For tablets: */
+              .main {
+                width: 80%;
+                padding: 0;
+              }
+              .right {
+                width: 100%;
+              }
+            }
+            @media only screen and (max-width: 768px) {
+              /* For mobile phones: */
+                .view {
+                    height: 30vh;
+                    font-family:serif;
+
 
 
