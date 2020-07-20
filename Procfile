@@ -1,1 +1,1 @@
-web: ./build/install/chepkirui-tracker/bin/chepkirui-tracker
+web: ./build/install/Wildlife-Tracker/bin/Wildlife-Tracker
