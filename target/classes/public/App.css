@@ -13,6 +13,9 @@ font-family: 'El Messiri', sans-serif;
 color: yellow;
 font-weight:900;
 font-size:20px;
+border-style:inset;
+border-color:green;
+border-weight:80px;
 
 }
 .sight{
