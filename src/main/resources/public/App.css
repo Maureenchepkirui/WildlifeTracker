@@ -24,6 +24,7 @@ font-weight:900;
 color:Yellow;
 font-family:'El Messiri', sans-serif;
  height:100%;
+ animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 .Details{
 background-image: url('images/jaguar-bold.jpg');
@@ -36,6 +37,7 @@ font-weight:900;
 color:Yellow;
 font-family:'El Messiri', sans-serif;
  height:100%;
+ animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 .animal{
 background-image: url('https://www.silverkris.com/wp-content/uploads/2017/02/Kaziranga-India_Free-Stock-Image_Pexels.com_.jpeg');
@@ -44,6 +46,7 @@ height:100%;
 background-size: cover;
 background-position: center ;
 font-family: 'El Messiri', sans-serif;
+animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 .gs{
 color: #D4AF37;
@@ -277,6 +280,7 @@ color: white;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 @-webkit-keyframes glow {
@@ -329,6 +333,7 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
   color:Yellow;
   font-family:'El Messiri', sans-serif;
   height:100%;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
   }
   .Kard{
     background-image: url(images/jaguar-bold.jpg);
@@ -341,6 +346,7 @@ animation: 1s ease-out 0s 1 slideInFromLeft;
     color:Yellow;
     font-family:'El Messiri', sans-serif;
     height:100%;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
     }
 
 
