@@ -8,7 +8,7 @@
 ```bash
 An application that allows Rangers to track wildlife sightings in the area.
 ```
-## LIVESITE
+![](https://forthebadge.com/images/badges/check-it-out.svg)
 
 [https://chepkirui-tracker.herokuapp.com/](https://chepkirui-tracker.herokuapp.com/)
 
