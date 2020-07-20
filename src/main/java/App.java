@@ -294,25 +294,25 @@ public class App{
         }, new HandlebarsTemplateEngine());
 
         //post: process form to update a sighting
-        post("/animalsighting/:id", (req, res) -> {
-            Map<String, Object> model = new HashMap<>();
-            List<Animal> allAnimals = Animal.all();//refresh navbar list
-            model.put("animals", allAnimals);
-            List<EndangeredAnimal> allEndangeredAnimals = EndangeredAnimal.allEndangered();//refresh navbar list
-            model.put("endangeredAnimals", allEndangeredAnimals);
-
-            String name = req.queryParams("name");
-            String location = req.queryParams("location");
-            int animalId = Integer.parseInt(req.queryParams("animalId"));
-            int idOfSightingToEdit = Integer.parseInt(req.params("id"));
-            try{
-                Sighting.update(idOfSightingToEdit, location, name, animalId);
-                res.redirect("/");
-                return null;
-            } catch (NullPointerException ex) {
-                return  new ModelAndView(model, "exceptions.hbs");
-            }
-        }, new HandlebarsTemplateEngine());
+//        post("/animalsighting/:id", (req, res) -> {
+//            Map<String, Object> model = new HashMap<>();
+//            List<Animal> allAnimals = Animal.all();//refresh navbar list
+//            model.put("animals", allAnimals);
+//            List<EndangeredAnimal> allEndangeredAnimals = EndangeredAnimal.allEndangered();//refresh navbar list
+//            model.put("endangeredAnimals", allEndangeredAnimals);
+//
+//            String name = req.queryParams("name");
+//            String location = req.queryParams("location");
+//            int animalId = Integer.parseInt(req.queryParams("animalId"));
+//            int idOfSightingToEdit = Integer.parseInt(req.params("id"));
+//            try{
+//                Sighting.update(idOfSightingToEdit, location, name, animalId);
+//                res.redirect("/");
+//                return null;
+//            } catch (NullPointerException ex) {
+//                return  new ModelAndView(model, "exceptions.hbs");
+//            }
+//        }, new HandlebarsTemplateEngine());
 
         //get: show form to update a sighting of endangered animal
         get("/endangered/sighting/:id/edit", (req, res) -> {

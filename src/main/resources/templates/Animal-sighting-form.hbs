@@ -1,7 +1,7 @@
 {{#partial "content"}}
     {{#if editSighting}}
         <div style="color:purple; text-align: center;">
-            <h1>Edit this Sighting!</h1>
+            <h1>EDIT HERE:</h1>
         </div>
         <form class="formstyle" action="/animalsighting/{{editSighting.id}}" method="post">
             <div class="form-group">
@@ -66,7 +66,12 @@
                             <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
+                    <br>
+                    <br>
                     <a href="/animals/new" class="button btn-warning">ADD NEW ANIMAL TO LIST HERE</a>
+                    <br>
+                    <br>
+                    <br>
                     <button type="submit" class="button  btn-warning">SUBMIT</button>
                 </div>
             {{else}}
