@@ -19,11 +19,13 @@ public class EndangeredAnimal extends Animal{
         this.type = DATABASE_TYPE;
     }
 
-    public String getHealth() {
+    public String getHealth()
+    {
         return health;
     }
 
     public String getAge() {
+
         return age;
     }
 
@@ -45,7 +47,7 @@ public class EndangeredAnimal extends Animal{
     @Override
     public void save() {
         if((this.name == null || this.name.trim().isEmpty()) || (this.health == null || this.health.trim().isEmpty()) || (this.age == null || this.age.trim().isEmpty())){
-            throw new NullPointerException("name , health and age cannot be null or empty");
+            throw new NullPointerException("name , health and age cannot be empty");//null pointer exception
         }
         String sql = "INSERT INTO animals (type, name, health, age) VALUES (:type, :name, :health, :age);";
         try(Connection con = DB.sql2o.open()) {
@@ -95,7 +97,7 @@ public class EndangeredAnimal extends Animal{
 
     public void update (String name, String health, String age){
         if(name == null || health == null || age == null){
-            throw new NullPointerException("You need to fill in your details!!");
+            throw new NullPointerException("You need to fill in your details!!");//null pointer exception
         }
         String sql = "UPDATE animals SET (name, health, age) = (:name, :health, :age) WHERE id = :id;";
         try(Connection con = DB.sql2o.open()){

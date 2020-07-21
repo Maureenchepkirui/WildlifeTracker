@@ -54,7 +54,7 @@ public class AnimalTest {
     public void allReturnsAllInstancesOfAnimal_true() {
         Animal firstAnimal = setNewAnimal();
         firstAnimal.save();
-        Animal secondAnimal = new Animal("Leopard");
+        Animal secondAnimal = new Animal("Baboon");
         secondAnimal.save();
         assertEquals(true, Animal.all().get(0).equals(firstAnimal));
         assertEquals(true, Animal.all().get(1).equals(secondAnimal));
@@ -71,7 +71,7 @@ public class AnimalTest {
 
     @Test(expected = NullPointerException.class)
     public void update_throwsExceptionIfNameNull(){
-        Animal testAnimal = new Animal("Lion");
+        Animal testAnimal = new Animal("Baboon");
         testAnimal.save();
         testAnimal.update(null);
     }
@@ -88,28 +88,39 @@ public class AnimalTest {
     }
 
     @Test
-    public void update_animalInstanceIsUpdatedCorrectly() {
+    public void updateAnimalInstanceIsUpdatedCorrectly_true() {
         Animal newAnimal = setNewAnimal();
         String originalName = newAnimal.getName();
         newAnimal.save();
-        newAnimal.update("cheetah");
+        newAnimal.update("monkey");
         Animal updatedAnimal = Animal.findById(newAnimal.getId());
         assertNotEquals(originalName, updatedAnimal.getName());
     }
 
     @Test
-    public void clearAll_nothingReturnsFromClearedTable() {
+    public void clearAllClearsAllInstances_true() {
       Animal newAnimal = setNewAnimal();
       newAnimal.save();
       Animal.clearAll();
       assertEquals(0, Animal.all().size());
     }
-
     @Test
-    public void deleteById_animalInstanceDeletedCorrectlyById() {
+    public  void findSightingsReturnsSightingsRelatedToAnimalInstance_true(){
         Animal firstAnimal = setNewAnimal();
         firstAnimal.save();
-        Animal secondAnimal = new Animal("leopard");
+        Sighting firstSighting = new Sighting("Zone A", "Peter", firstAnimal.getId());
+        firstSighting.save();
+        Sighting secondSighting = new Sighting("Forest Clearing", "Maureen", firstAnimal.getId());
+        secondSighting.save();
+        assertEquals(2, firstAnimal.findSightings().size());
+        assertTrue(firstAnimal.findSightings().contains(firstSighting));
+        assertTrue(firstAnimal.findSightings().contains(secondSighting));
+    }
+    @Test
+    public void deleteByIdDeletesCorrectAnimal_true() {
+        Animal firstAnimal = setNewAnimal();
+        firstAnimal.save();
+        Animal secondAnimal = new Animal("elephant");
         secondAnimal.save();
         Animal.deleteById(firstAnimal.getId());
         assertEquals(1, Animal.all().size());
@@ -117,13 +128,13 @@ public class AnimalTest {
     }
 
     @Test(expected = NullPointerException.class)
-    public void save_throwsExceptionIfNameNull(){
-        Animal testAnimal = new Animal(null);
+    public void saveThrowsExceptionIfNameNull_true(){
+        Animal testAnimal = new Animal(null);//name
         testAnimal.save();
     }
 
     @Test
-    public void save_nameCannotBeNull(){
+    public void saveCatchesExeptions_true(){
         Animal testAnimal = new Animal(null);
         try {
             testAnimal.save();
@@ -131,18 +142,7 @@ public class AnimalTest {
         } catch (NullPointerException exception){ System.out.println(exception);}
     }
 
-    @Test
-    public  void findSightings_sightingsRelatedToAnimalInstanceCanBeFound() {
-        Animal firstAnimal = setNewAnimal();
-        firstAnimal.save();
-        Sighting firstSighting = new Sighting("Zone A", "Peter", firstAnimal.getId());
-        firstSighting.save();
-        Sighting secondSighting = new Sighting("Zone B", "Maureen", firstAnimal.getId());
-        secondSighting.save();
-        assertEquals(2, firstAnimal.findSightings().size());
-        assertTrue(firstAnimal.findSightings().contains(firstSighting));
-        assertTrue(firstAnimal.findSightings().contains(secondSighting));
-    }
+
 //<.............helper.....................................................
     private Animal setNewAnimal(){
         return new Animal("Zebra");

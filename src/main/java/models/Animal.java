@@ -48,7 +48,7 @@ public static final String ANIMAL_TYPE = "Non-endangered";
 
     public void save () {
         if( this.name == null || this.name.trim().isEmpty()){
-            throw new NullPointerException("name cannot be null or empty");
+            throw new NullPointerException("name cannot be null");
         }
         String sql = "INSERT INTO animals (type, name) VALUES (:type, :name);";
         try(Connection con = DB.sql2o.open()){

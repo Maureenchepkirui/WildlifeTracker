@@ -20,20 +20,25 @@ public class Sighting {
     }
 
     public int getId() {
+
         return id;
     }
 
     public String getLocation() {
+
         return location;
     }
 
-    public String getRangerName() { return rangerName; }
+    public String getRangerName() {
+        return rangerName; }
 
     public int getAnimalId() {
+
         return animalId;
     }
 
-    public Timestamp getCreatedAt() {
+    public Timestamp getCreatedAt()
+    {
         return createdAt;
     }
 
@@ -50,6 +55,7 @@ public class Sighting {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id, location, rangerName, animalId);
     }
 
