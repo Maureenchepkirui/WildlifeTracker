@@ -45,3 +45,7 @@ settings.gradle
 .idea
 .idea/
 !gradle-wrapper.jar
+
+# ENVIRONMENT#
+############
+Environment.java
