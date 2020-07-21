@@ -1,16 +1,27 @@
-## WILDLIFE TRACKER
+# <span style="background-color: #FFFF00">WILDLIFE TRACKER</span>
 
-## screenshot
 
-![](Screenshot2.png)
-
-# DESCRIPTION
-```bash
-An application that allows Rangers to track wildlife sightings in the area.
-```
 ![](https://forthebadge.com/images/badges/check-it-out.svg)
 
 [https://chepkirui-tracker.herokuapp.com/](https://chepkirui-tracker.herokuapp.com/)
+
+
+##<span style="background-color: #FFFF00">An application that allows Rangers to track wildlife sightings in the area.</span>
+
+
+## SCREENSHOT DEMO
+
+## <span style="background-color: #FFFF00">HOMEPAGE</span>
+
+![](Screenshot2.png)
+
+## <span style="background-color: #FFFF00">VIEW ANIMALS</span>
+
+![](Screenshot3png) 
+
+## <span style="background-color: #FFFF00">VIEW SIGHTINGS</span>
+ 
+ ![](Screenshot4.png) 
 
 ## AUTHOR
 ```bash
