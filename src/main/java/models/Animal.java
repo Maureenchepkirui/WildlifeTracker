@@ -14,19 +14,26 @@ public class Animal {
 //<....................this is my constant................................................................................>
 public static final String ANIMAL_TYPE = "Non-endangered";
     public Animal(String name) {
+        if (name.equals("")){
+            //throw exception if no name is entered
+            throw new IllegalArgumentException("Please enter an animal name.");
+        }
         this.name = name;
         this.type = ANIMAL_TYPE;
     }
 
     public int getId() {
+
         return id;
     }
 
     public String getName() {
+
         return name;
     }
 
     public  String getType() {
+
         return this.type;
     }
 
