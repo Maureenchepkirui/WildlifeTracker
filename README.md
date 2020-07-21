@@ -1,13 +1,11 @@
 # <span style="background-color: #FFFF00">WILDLIFE TRACKER</span>
 
+## <span style="background-color: #FFFF00">An application that allows Rangers to track wildlife sightings in the area.</span>
+
 
 ![](https://forthebadge.com/images/badges/check-it-out.svg)
 
 [https://chepkirui-tracker.herokuapp.com/](https://chepkirui-tracker.herokuapp.com/)
-
-
-##<span style="background-color: #FFFF00">An application that allows Rangers to track wildlife sightings in the area.</span>
-
 
 ## SCREENSHOT DEMO
 
